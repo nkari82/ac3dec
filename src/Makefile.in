@@ -297,7 +297,7 @@ distdir: $(DISTFILES)
 	  fi; \
 	done
 a52dec.o: a52dec.c ../include/config.h getopt.h ../include/a52.h \
-	../include/audio_out.h ../include/mm_accel.h gettimeofday.h
+	../include/audio_out.h gettimeofday.h
 extract_a52.o: extract_a52.c ../include/config.h getopt.h
 getopt.o: getopt.c ../include/config.h
 gettimeofday.o: gettimeofday.c ../include/config.h gettimeofday.h

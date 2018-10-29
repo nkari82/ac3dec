@@ -38,7 +38,6 @@
 
 #include "a52.h"
 #include "audio_out.h"
-#include "mm_accel.h"
 #include "gettimeofday.h"
 
 #define BUFFER_SIZE 4096
@@ -566,8 +565,6 @@ static void es_loop (void)
 
 int main (int argc, char ** argv)
 {
-    uint32_t accel;
-
 #ifdef HAVE_IO_H
     setmode (fileno (stdout), O_BINARY);
 #endif
@@ -577,15 +574,13 @@ int main (int argc, char ** argv)
 
     handle_args (argc, argv);
 
-    accel = disable_accel ? 0 : MM_ACCEL_DJBFFT;
-
     output = ao_open (output_open);
     if (output == NULL) {
 	fprintf (stderr, "Can not open output\n");
 	return 1;
     }
 
-    state = a52_init (accel);
+    state = a52_init ();
     if (state == NULL) {
 	fprintf (stderr, "A52 init failed\n");
 	return 1;
