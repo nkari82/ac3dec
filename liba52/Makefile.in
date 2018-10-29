@@ -80,7 +80,7 @@ CFLAGS = @CFLAGS@ @LIBA52_CFLAGS@
 
 lib_LTLIBRARIES = liba52.la
 
-liba52_la_SOURCES = bitstream.c imdct.c bit_allocate.c parse.c downmix.c
+liba52_la_SOURCES = bitstream.c imdct.c bit_allocate.c parse.c downmix.c cpu_accel.c cpu_state.c crc.c
 liba52_la_LIBADD = @LIBA52_LIBS@ -lm
 liba52_la_LDFLAGS = -no-undefined
 
@@ -249,7 +249,13 @@ imdct.lo imdct.o : imdct.c ../include/config.h ../include/a52.h \
 	a52_internal.h ../include/mm_accel.h
 parse.lo parse.o : parse.c ../include/config.h ../include/a52.h \
 	a52_internal.h bitstream.h tables.h
-
+cpu_accel.lo cpu_accel.o : cpu_accel.c ../include/config.h ../include/a52.h \
+	a52_internal.h bitstream.h tables.h
+cpu_state.lo cpu_state.o : cpu_state.c ../include/config.h ../include/a52.h \
+	a52_internal.h bitstream.h tables.h
+crc.lo crc.o : crc.c ../include/config.h ../include/a52.h \
+	a52_internal.h bitstream.h tables.h
+	
 info-am:
 info: info-am
 dvi-am:
