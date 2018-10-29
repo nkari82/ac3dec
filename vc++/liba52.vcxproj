@@ -117,7 +117,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <InlineFunctionExpansion>Default</InlineFunctionExpansion>
       <FunctionLevelLinking>false</FunctionLevelLinking>
       <Optimization>Disabled</Optimization>
@@ -206,6 +206,9 @@
   <ItemGroup>
     <ClCompile Include="..\liba52\bitstream.c" />
     <ClCompile Include="..\liba52\bit_allocate.c" />
+    <ClCompile Include="..\liba52\cpu_accel.c" />
+    <ClCompile Include="..\liba52\cpu_state.c" />
+    <ClCompile Include="..\liba52\crc.c" />
     <ClCompile Include="..\liba52\downmix.c" />
     <ClCompile Include="..\liba52\imdct.c" />
     <ClCompile Include="..\liba52\parse.c" />

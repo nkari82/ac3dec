@@ -26,6 +26,15 @@
     <ClCompile Include="..\liba52\parse.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\liba52\cpu_accel.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\liba52\cpu_state.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\liba52\crc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\include\a52.h">
